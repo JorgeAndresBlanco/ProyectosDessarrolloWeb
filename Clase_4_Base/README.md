@@ -59,29 +59,50 @@ Abrir: <http://localhost:8080>
 
 ---
 
-## 🗂️ Estructura
+## 🗂️ Estructura (organizada por capas)
 
 ```
-clase4base/
-├── pom.xml                                  (sin JPA - se agrega en clase)
-├── seed-data.sql                            (INSERTs para Workbench)
+Clase_4_Base/
+├── pom.xml                                       (sin JPA - se agrega en clase)
+├── seed-data.sql                                 (INSERTs para Workbench)
+├── postman-collection.json                       (peticiones de ejemplo)
+├── mvnw / mvnw.cmd / .mvn/                       (Maven Wrapper)
 ├── README.md
 ├── .gitignore
 └── src/main/
     ├── java/com/ufide/clase4base/
-    │   ├── Clase4baseApplication.java       (main)
-    │   ├── Curso.java                       (POJO - en clase pasa a @Entity)
-    │   ├── HomeController.java
-    │   └── CursoController.java             (datos en memoria - se refactoriza)
+    │   ├── Clase4baseApplication.java            (main - debe quedar en root)
+    │   │
+    │   ├── controller/                           Capa Controller (web)
+    │   │   ├── HomeController.java
+    │   │   └── CursoController.java              (datos en memoria - se refactoriza)
+    │   │
+    │   ├── entity/                               Capa Entity (modelo de datos)
+    │   │   └── Curso.java                        (POJO - en clase pasa a @Entity)
+    │   │
+    │   ├── repository/                           Capa Repository (acceso a BD)
+    │   │   └── package-info.java                 (CLASE 4: se crea CursoRepository)
+    │   │
+    │   └── service/                              Capa Service (logica de negocio)
+    │       └── package-info.java                 (CLASE 4: se crea CursoService)
+    │
     └── resources/
-        ├── application.properties           (config MySQL comentada)
+        ├── application.properties                (config MySQL comentada)
         ├── static/css/styles.css
         └── templates/
             ├── home.html
             ├── cursos.html
             ├── curso.html
-            └── fragments/header.html        (navbar + footer)
+            └── fragments/header.html             (navbar + footer)
 ```
+
+**Por que esta organizacion?** Refleja visualmente las **4 capas del MVC ampliado**. Cuando alguien abre el proyecto y ve el arbol, ve la arquitectura. Es el patron _package by layer_, estandar en proyectos Spring Boot.
+
+Reglas:
+
+- `Clase4baseApplication.java` queda en el ROOT — `@SpringBootApplication` escanea ese paquete y todos los sub-paquetes.
+- Los nombres de los paquetes van en **singular** (`controller`, `service`, `repository`, `entity`) — convencion oficial de Spring.
+- Cada capa solo conoce a la de abajo: Controller → Service → Repository → Entity.
 
 ---
 

@@ -1,4 +1,4 @@
-package com.ufide.clase4base;
+package com.ufide.clase4base.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ufide.clase4base.entity.Curso;
 
 /**
  * Controlador de cursos.
@@ -19,9 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * que internamente usa CursoRepository (JPA) para leer de MySQL.
  *
  * Pasos del refactor durante la clase:
- *   1) Inyectar el servicio:   @Autowired private CursoService service;
- *   2) En listar():            modelo.addAttribute("cursos", service.listar());
- *   3) En detalle():           service.buscarPorId(id);
+ *   1) Inyectar el servicio:
+ *      import com.ufide.clase4base.service.CursoService;
+ *      @Autowired private CursoService service;
+ *   2) En listar():   modelo.addAttribute("cursos", service.listar());
+ *   3) En detalle():  service.buscarPorId(id).orElse(null);
  *   4) Borrar el bloque "datos en memoria" de mas abajo.
  */
 @Controller

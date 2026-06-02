@@ -1,4 +1,4 @@
-package com.ufide.clase4base;
+package com.ufide.clase4base.entity;
 
 /**
  * Modelo de datos del Curso.

@@ -1,4 +1,4 @@
-package com.ufide.clase4base;
+package com.ufide.clase4base.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
