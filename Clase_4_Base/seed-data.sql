@@ -21,7 +21,7 @@ INSERT INTO cursos (nombre, descripcion, creditos, profesor) VALUES
  3, 'Esteban Ortega'),
 
 ('Spring Boot',
- 'Backend con Java 21, MVC, Thymeleaf y Bootstrap.',
+ 'Backend con Java 25, MVC, Thymeleaf y Bootstrap.',
  4, 'Esteban Ortega'),
 
 ('Bases de Datos',

@@ -6,7 +6,7 @@ Aplicación Spring Boot + Thymeleaf + Bootstrap, lista para que durante la **Cla
 
 ## ✅ Lo que ya tiene
 
-- Spring Boot 3.3.5 + Java 21
+- Spring Boot 3.3.5 + Java 25
 - Thymeleaf con `spring.thymeleaf.cache=false` (reload sin reiniciar)
 - Bootstrap 5.3 + Bootstrap Icons por CDN
 - CSS propio en `static/css/styles.css`

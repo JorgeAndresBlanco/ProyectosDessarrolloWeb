@@ -21,12 +21,13 @@ import com.ufide.clase4base.entity.Curso;
  * que internamente usa CursoRepository (JPA) para leer de MySQL.
  *
  * Pasos del refactor durante la clase:
- *   1) Inyectar el servicio:
- *      import com.ufide.clase4base.service.CursoService;
- *      @Autowired private CursoService service;
- *   2) En listar():   modelo.addAttribute("cursos", service.listar());
- *   3) En detalle():  service.buscarPorId(id).orElse(null);
- *   4) Borrar el bloque "datos en memoria" de mas abajo.
+ * 1) Inyectar el servicio:
+ * import com.ufide.clase4base.service.CursoService;
+ * 
+ * @Autowired private CursoService service;
+ *            2) En listar(): modelo.addAttribute("cursos", service.listar());
+ *            3) En detalle(): service.buscarPorId(id).orElse(null);
+ *            4) Borrar el bloque "datos en memoria" de mas abajo.
  */
 @Controller
 @RequestMapping("/cursos")
@@ -37,23 +38,23 @@ public class CursoController {
 
     public CursoController() {
         cursos.add(new Curso(1L, "Fundamentos Web",
-            "Introduccion a HTML5, CSS3 y arquitectura cliente/servidor.",
-            3, "Esteban Ortega"));
+                "Introduccion a HTML5, CSS3 y arquitectura cliente/servidor.",
+                3, "Esteban Ortega"));
         cursos.add(new Curso(2L, "Spring Boot",
-            "Backend con Java 21, MVC, Thymeleaf y Bootstrap.",
-            4, "Esteban Ortega"));
+                "Backend con Java 25, MVC, Thymeleaf y Bootstrap.",
+                4, "Esteban Ortega"));
         cursos.add(new Curso(3L, "Bases de Datos",
-            "MySQL, Workbench, JPA, Hibernate y modelo relacional.",
-            4, "Esteban Ortega"));
+                "MySQL, Workbench, JPA, Hibernate y modelo relacional.",
+                4, "Esteban Ortega"));
         cursos.add(new Curso(4L, "Patrones de Diseno",
-            "MVC, Repository, Service, Inyeccion de Dependencias.",
-            3, "Esteban Ortega"));
+                "MVC, Repository, Service, Inyeccion de Dependencias.",
+                3, "Esteban Ortega"));
         cursos.add(new Curso(5L, "Seguridad Web",
-            "Autenticacion, autorizacion y buenas practicas con Spring Security.",
-            4, "Esteban Ortega"));
+                "Autenticacion, autorizacion y buenas practicas con Spring Security.",
+                4, "Esteban Ortega"));
         cursos.add(new Curso(6L, "APIs REST",
-            "Servicios JSON, consumo desde clientes, despliegue en la nube.",
-            3, "Esteban Ortega"));
+                "Servicios JSON, consumo desde clientes, despliegue en la nube.",
+                3, "Esteban Ortega"));
     }
     // -----------------------------------------------------------------------------
 
@@ -66,9 +67,9 @@ public class CursoController {
     @GetMapping("/{id}")
     public String detalle(Model modelo, @PathVariable Long id) {
         Curso encontrado = cursos.stream()
-                                 .filter(c -> c.getId().equals(id))
-                                 .findFirst()
-                                 .orElse(null);
+                .filter(c -> c.getId().equals(id))
+                .findFirst()
+                .orElse(null);
         modelo.addAttribute("curso", encontrado);
         return "curso";
     }
