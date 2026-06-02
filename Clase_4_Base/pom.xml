@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.5</version>
+		<version>4.0.6</version>
         <relativePath/>
     </parent>
 
@@ -18,14 +18,14 @@
     <description>Proyecto base para Clase 4 - Hibernate y MVC completo</description>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
     </properties>
 
     <dependencies>
         <!-- Web (Spring MVC + Tomcat embebido) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
 
         <!-- Thymeleaf (motor de plantillas) -->
@@ -41,6 +41,12 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+	
+	<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-thymeleaf-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 
         <!-- ============================================================== -->
         <!-- CLASE 4: descomentar estas dependencias durante el laboratorio -->
