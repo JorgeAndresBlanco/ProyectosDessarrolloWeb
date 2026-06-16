@@ -69,6 +69,27 @@
             <version>5.4.10.Final</version>
         </dependency>
 
+        <!-- ============================================================== -->
+        <!-- CLASE 6: descomentar estas dependencias durante el laboratorio -->
+        <!-- ============================================================== -->
+
+        <!-- Descomentar cuando anadimos validaciones al Curso (PARTE A.4) -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        -->
+
+        <!-- Descomentar cuando agregamos subida de imagenes con Firebase (PARTE E) -->
+        <!--
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>9.3.0</version>
+        </dependency>
+        -->
+
 
         <!-- Tests -->
         <dependency>
