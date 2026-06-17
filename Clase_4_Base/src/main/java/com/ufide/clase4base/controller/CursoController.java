@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 // CLASE 6: descomentar imports cuando se vayan necesitando
-// import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.ModelAttribute;
-// import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+ import org.springframework.web.bind.annotation.PostMapping;
+ import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 // CLASE 6 - PARTE A.4 (validaciones): descomentar al agregar @Valid
 // import jakarta.validation.Valid;
@@ -103,17 +103,17 @@ public class CursoController {
 
         // PASO A.1 - descomentar para mostrar el formulario vacio de nuevo curso.
         // El template templates/cursos/form.html lo creas en el paso A.2.
-        /*
+        
         @GetMapping("/nuevo")
         public String mostrarFormNuevo(Model modelo) {
                 modelo.addAttribute("curso", new Curso());
                 return "cursos/form";
         }
-        */
+        
 
         // PASO A.3 - descomentar para recibir el POST del formulario y guardar.
         // En PARTE A se usa sin @Valid; en PARTE A.4 reemplazas la firma por la version validada (abajo).
-        /*
+        
         @PostMapping
         public String guardar(@ModelAttribute("curso") Curso curso,
                               RedirectAttributes ra) {
@@ -121,7 +121,7 @@ public class CursoController {
                 ra.addFlashAttribute("ok", "Curso guardado correctamente");
                 return "redirect:/cursos";
         }
-        */
+        
 
         // PASO A.4 - VERSION CON VALIDACIONES.
         // Cuando termines la PARTE A.4 (validaciones en Curso),
